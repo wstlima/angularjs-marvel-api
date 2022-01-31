@@ -35,7 +35,7 @@ Usando yarn para rodar os scripts `yarn [script]`, por exemplo: `yarn test`.
 
 * `ci` - para Travis CI
 
-# Testes
+## Executando Testes
 
 * `*.test.js` - mocha testes unitários
 * `*.integration.test.js` - mocha testes de integração (manual)
