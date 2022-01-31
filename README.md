@@ -40,3 +40,8 @@ Usando yarn para rodar os scripts `yarn [script]`, por exemplo: `yarn test`.
 * `*.test.js` - mocha testes unitários
 * `*.integration.test.js` - mocha testes de integração (manual)
 * `*.spec.js` - karma testes de integração 
+
+## Débitos Técnicos
+
+1. Paginação para os personagens
+2. Paginação para os quadrinhos
