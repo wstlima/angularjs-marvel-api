@@ -14,29 +14,29 @@ describe('CharacterService', function () {
         service = _CharacterService_;
     }));
 
-    it('should contain empty characters after initialization', function() {
+    it('deve conter caracteres vazios após a inicialização', function() {
         expect(service.characters.length).toBe(0);
     });
 
-    it('should add character', function () {
-        service.addCharacter('Finish example project');
+    it('deve adicionar um character', function () {
+        service.addCharacter('Finalizar projeto de exemplo');
         expect(service.characters.length).toBe(1);
-        expect(service.characters[0].label).toBe('Finish example project');
+        expect(service.characters[0].label).toBe('Finalizar projeto de exemplo');
         expect(service.characters[0].done).toBe(false);
     });
 
     it('should toggle character', function () {
-        service.addCharacter('Finish example project');
+        service.addCharacter('Finalizar projeto de exemplo');
         expect(service.characters[0].done).toBe(false);
 
-        service.toggleCharacter('Finish example project');
+        service.toggleCharacter('Finalizar projeto de exemplo');
         expect(service.characters[0].done).toBe(true);
 
-        service.toggleCharacter('Finish example project');
+        service.toggleCharacter('Finalizar projeto de exemplo');
         expect(service.characters[0].done).toBe(false);
     });
 
-    it('should remove done characters', function () {
+    it('deve alternar o caractere', function () {
         service.addCharacter('Character1');
         service.addCharacter('Character2');
         service.addCharacter('Character3');

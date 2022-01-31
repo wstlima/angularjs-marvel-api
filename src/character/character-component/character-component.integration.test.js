@@ -5,7 +5,7 @@ import CharacterService from '../services/character.service.js';
 
 let component;
 
-describe('CharacterComponent with real service (Integration test)', function() {
+describe('CharacterComponent com serviço real (teste de integração)', function() {
 
     beforeEach(function() {
         let initialCharacters = [];
@@ -13,21 +13,21 @@ describe('CharacterComponent with real service (Integration test)', function() {
         component = new CharacterComponent(characterService);
     });
 
-    it('should contain reference to service\'s characters', function () {
+    it('deve conter referência aos serviços do caracter', function () {
         assert.equal(component.characters.length, 0);
     });
 
-    it('should add character', function () {
-        component.label = 'Finish example project';
+    it('deve adicionar caracter', function () {
+        component.label = 'Finalizar projeto de exemplo';
         component.addCharacter();
         assert.equal(component.label, '');
         assert.equal(component.characters.length, 1);
-        assert.equal(component.characters[0].label, 'Finish example project');
+        assert.equal(component.characters[0].label, 'Finalizar projeto de exemplo');
         assert.equal(component.characters[0].done, false);
     });
 
-    it('should toggle character', function () {
-        component.label = 'Finish example project';
+    it('deve alternar o caractere', function () {
+        component.label = 'Finalizar projeto de exemplo';
         component.addCharacter();
         assert.equal(component.characters[0].done, false);
 
@@ -38,7 +38,7 @@ describe('CharacterComponent with real service (Integration test)', function() {
         assert.equal(component.characters[0].done, false);
     });
 
-    it('should remove done characters', function () {
+    it('deve remover os caracteres sinalizados como prontos', function () {
         component.label = 'Character1';
         component.addCharacter();
 

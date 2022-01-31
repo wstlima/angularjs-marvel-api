@@ -2,7 +2,7 @@
 
 Aplicação com testes avançados para Angular JS 1.X usando ES6 modules consumindo a API da Marvel
 
-Ótima estrutura para projetos corporativos com foco pesado em testes de unidade e integração.
+Ótima estrutura para projetos corporativos com foco pesado em testes unitários e integração.
 
 ## Demo
 * `https://marvel.controlemix.com.br`

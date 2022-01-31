@@ -6,7 +6,7 @@ import CharacterService from '../services/character.service.js';
 let component;
 let mockCharacterService;
 
-describe('CharacterComponent mockando o serviço (unit test)', function() {
+describe('CharacterComponent mockando o serviço (teste unitário)', function() {
 
     beforeEach(function() {
         let initialCharacters = [];
@@ -19,19 +19,19 @@ describe('CharacterComponent mockando o serviço (unit test)', function() {
         mockCharacterService.restore();
     });
 
-    it('should add character', function () {
+    it('deve adicionar um character', function () {
         mockCharacterService
             .expects('addCharacter')
             .once()
-            .withArgs('Finish example project');
+            .withArgs('Finalizar projeto de exemplo');
 
-        component.label = 'Finish example project';
+        component.label = 'Finalizar projeto de exemplo';
         component.addCharacter();
 
         mockCharacterService.verify();
     });
 
-    it('should toggle character', function () {
+    it('deve alternar o caractere', function () {
         let mockCharacter = {label: 'Add unit tests', done: false};
         mockCharacterService
             .expects('toggleCharacter')
@@ -44,7 +44,7 @@ describe('CharacterComponent mockando o serviço (unit test)', function() {
         mockCharacterService.verify();
     });
 
-    it('should remove done characters', function () {
+    it('deve remover os caracteres sinalizados como prontos', function () {
         mockCharacterService
             .expects('removeDoneCharacters')
             .once();
