@@ -1,10 +1,16 @@
-# Angular JS 1.5 - Aplicação com testes avançados para Angular JS 1.X usando ES6 modules consumindo a API da Marvel
+# Angular JS 1.5 
+
+Aplicação com testes avançados para Angular JS 1.X usando ES6 modules consumindo a API da Marvel
 
 Ótima estrutura para projetos corporativos com foco pesado em testes de unidade e integração.
 
+## Demo
+* `https://marvel.controlemix.com.br`
+
+
 ## Começando
 
-1. Clone o repositório `git clone https://github.com/wstlima/angularjs-marvel-api.git`
+1. Clone o repositório `git clone https://github.com/wstlima/angularjs-marvel-api`
 2. Entre no diretório do projeto `cd angularjs-marvel-api`
 3. Instale as dependências `npm i` ou `npm install` ou `yarn`
 
