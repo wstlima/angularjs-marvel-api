@@ -19,20 +19,20 @@ describe('CharacterService', function () {
     });
 
     it('deve adicionar um character', function () {
-        service.addCharacter('Finalizar projeto de exemplo');
+        service.addCharacter('Finalizar projeto');
         expect(service.characters.length).toBe(1);
-        expect(service.characters[0].label).toBe('Finalizar projeto de exemplo');
+        expect(service.characters[0].label).toBe('Finalizar projeto');
         expect(service.characters[0].done).toBe(false);
     });
 
     it('should toggle character', function () {
-        service.addCharacter('Finalizar projeto de exemplo');
+        service.addCharacter('Finalizar projeto');
         expect(service.characters[0].done).toBe(false);
 
-        service.toggleCharacter('Finalizar projeto de exemplo');
+        service.toggleCharacter('Finalizar projeto');
         expect(service.characters[0].done).toBe(true);
 
-        service.toggleCharacter('Finalizar projeto de exemplo');
+        service.toggleCharacter('Finalizar projeto');
         expect(service.characters[0].done).toBe(false);
     });
 

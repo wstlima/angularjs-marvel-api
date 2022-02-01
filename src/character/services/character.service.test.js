@@ -11,29 +11,29 @@ describe('CharacterService', function() {
         service = new CharacterService(initialCharacters);
     });
 
-    it('should contain empty characters after initialization', function () {
+    it('deve conter caracteres vazios após a inicialização', function () {
         assert.equal(service.characters.length, 0);
     });
 
-    it('should add character', function () {
-        service.addCharacter('Finish example project');
+    it('deve adicionar um character', function () {
+        service.addCharacter('Finalizar projeto');
         assert.equal(service.characters.length, 1);
-        assert.equal(service.characters[0].label, 'Finish example project');
+        assert.equal(service.characters[0].label, 'Finalizar projeto');
         assert.equal(service.characters[0].done, false);
     });
 
-    it('should toggle character', function () {
-        service.addCharacter('Finish example project');
+    it('deve alternar o caractere', function () {
+        service.addCharacter('Finalizar projeto');
         assert.equal(service.characters[0].done, false);
 
-        service.toggleCharacter('Finish example project');
+        service.toggleCharacter('Finalizar projeto');
         assert.equal(service.characters[0].done, true);
 
-        service.toggleCharacter('Finish example project');
+        service.toggleCharacter('Finalizar projeto');
         assert.equal(service.characters[0].done, false);
     });
 
-    it('should remove done characters', function () {
+    it('deve remover os caracteres sinalizados como prontos', function () {
         service.addCharacter('Character1');
         service.addCharacter('Character2');
         service.addCharacter('Character3');

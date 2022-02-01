@@ -18,16 +18,16 @@ describe('CharacterComponent com serviço real (teste de integração)', functio
     });
 
     it('deve adicionar caracter', function () {
-        component.label = 'Finalizar projeto de exemplo';
+        component.label = 'Finalizar projeto';
         component.addCharacter();
         assert.equal(component.label, '');
         assert.equal(component.characters.length, 1);
-        assert.equal(component.characters[0].label, 'Finalizar projeto de exemplo');
+        assert.equal(component.characters[0].label, 'Finalizar projeto');
         assert.equal(component.characters[0].done, false);
     });
 
     it('deve alternar o caractere', function () {
-        component.label = 'Finalizar projeto de exemplo';
+        component.label = 'Finalizar projeto';
         component.addCharacter();
         assert.equal(component.characters[0].done, false);
 

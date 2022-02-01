@@ -23,9 +23,9 @@ describe('CharacterComponent mockando o serviço (teste unitário)', function() 
         mockCharacterService
             .expects('addCharacter')
             .once()
-            .withArgs('Finalizar projeto de exemplo');
+            .withArgs('Finalizar projeto');
 
-        component.label = 'Finalizar projeto de exemplo';
+        component.label = 'Finalizar projeto';
         component.addCharacter();
 
         mockCharacterService.verify();
