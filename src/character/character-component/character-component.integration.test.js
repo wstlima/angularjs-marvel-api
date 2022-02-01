@@ -9,7 +9,8 @@ describe('CharacterComponent com serviço real (teste de integração)', functio
 
     beforeEach(function() {
         let initialCharacters = [];
-        let characterService = new CharacterService(initialCharacters);
+        let appEnv = {};
+        let characterService = new CharacterService(initialCharacters, appEnv);
         component = new CharacterComponent(characterService);
     });
 

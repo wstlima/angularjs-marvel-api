@@ -8,7 +8,8 @@ describe('CharacterService', function() {
 
     beforeEach(function() {
         let initialCharacters = [];
-        service = new CharacterService(initialCharacters);
+        let appEnv = {};
+        service = new CharacterService(initialCharacters, appEnv);
     });
 
     it('deve conter caracteres vazios após a inicialização', function () {

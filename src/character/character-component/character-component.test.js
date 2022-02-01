@@ -10,7 +10,8 @@ describe('CharacterComponent mockando o serviço (teste unitário)', function() 
 
     beforeEach(function() {
         let initialCharacters = [];
-        let CharacterServiceInstance = new CharacterService(initialCharacters);
+        let appEnv = {};
+        let CharacterServiceInstance = new CharacterService(initialCharacters, appEnv);
         mockCharacterService = sinon.mock(CharacterServiceInstance);
         component = new CharacterComponent(CharacterServiceInstance);
     });
