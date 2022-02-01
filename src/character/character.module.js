@@ -4,6 +4,7 @@ import ngResource from "angular-resource";
 
 import { routing } from "./character.config.js";
 import { DEFAULT_CHARACTERS } from "./character.constants.js";
+import { DEFAULT_ENV } from "../app/envs/app.env.js";
 
 import CharacterService from "./services/character.service";
 import CharacterComponent from "./character-component/character-component";
@@ -18,4 +19,5 @@ export default angular
     })
     .controller('characterController', ['$http','$scope', CharacterComponent])
     .service("CharacterService", CharacterService, [ngResource])
+    .constant("appEnv", DEFAULT_ENV)
     .constant("initialCharacters", DEFAULT_CHARACTERS).name;

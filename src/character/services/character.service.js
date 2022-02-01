@@ -1,17 +1,16 @@
 import * as _ from "lodash";
 import MD5 from "crypto-js/md5";
 
-const publickey = "1f3b2c67e4ad3c82482b6808d1b2817f";
-const privatekey = "0882c3f05f754a393fe35ae19a8f3e91510f7583";
-
 export default class CharacterService {
-    constructor(initialCharacters) {
+    constructor(initialCharacters, appEnv) {
         this.characters = initialCharacters;
+        this.publickey = appEnv.publickey;
+        this.privatekey = appEnv.privatekey;
     }
 
     urlGenerator(baseUrl, limit, offset, nameStartsWith) {
         var ts = new Date().getTime();
-        var stringToHash = ts + privatekey + publickey;
+        var stringToHash = ts + this.privatekey + this.publickey;
         var hash = MD5(stringToHash).toString();
         var url =
             baseUrl +
@@ -22,7 +21,7 @@ export default class CharacterService {
             "&ts=" +
             ts +
             "&apikey=" +
-            publickey +
+            this.publickey +
             "&hash=" +
             hash;
         url = nameStartsWith ? url + "&nameStartsWith=" + nameStartsWith : url;
@@ -68,12 +67,12 @@ export default class CharacterService {
     getComic($scope, $http, resourceURI) {
         resourceURI = resourceURI.replace("http://", "https://");
         var ts = new Date().getTime();
-        var stringToHash = ts + privatekey + publickey;
+        var stringToHash = ts + this.privatekey + this.publickey;
         var hash = MD5(stringToHash).toString();
 
         return $http
             .get(resourceURI, {
-                params: { ts: ts, apikey: publickey, hash: hash, limit: 1 }
+                params: { ts: ts, apikey: this.publickey, hash: hash, limit: 1 }
             })
             .then(
                 function (response) {
@@ -90,7 +89,7 @@ export default class CharacterService {
     getComics($scope, $http, characterId) {
         $scope.loading = true;
         var ts = new Date().getTime();
-        var stringToHash = ts + privatekey + publickey;
+        var stringToHash = ts + this.privatekey + this.publickey;
         var hash = MD5(stringToHash).toString();
 
         return $http
@@ -101,7 +100,7 @@ export default class CharacterService {
                 {
                     params: {
                         ts: ts,
-                        apikey: publickey,
+                        apikey: this.publickey,
                         hash: hash,
                         format: "comic",
                         orderBy: "onsaleDate",
