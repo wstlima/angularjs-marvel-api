@@ -30,6 +30,7 @@ export default class CharacterService {
     }
 
     loadCharacters($scope, $http, nameStartsWith) {
+        $scope.charSelected = null;
         const url = this.urlGenerator(
             "https://gateway.marvel.com:443/v1/public/characters",
             10,
@@ -47,6 +48,7 @@ export default class CharacterService {
     }
 
     loadCharacter($scope, $http, nameStartsWith, id) {
+        $scope.charSelected = null;
         const url = this.urlGenerator(
             `https://gateway.marvel.com:443/v1/public/characters/` + id,
             1,
@@ -78,18 +80,9 @@ export default class CharacterService {
                     // success
                     $scope.event = null;
                     $scope.comic = response.data.data.results[0];
-                    //console.log(JSON.stringify($scope.comic,null,2));
                 },
                 function (response) {
                     return response; 
-                    // error
-                    // console.log(
-                    //     "$http.get error: " +
-                    //         response.statusText +
-                    //         " (" +
-                    //         response.status +
-                    //         ")"
-                    // );
                 }
             );
     }
@@ -124,18 +117,9 @@ export default class CharacterService {
                     $scope.comicsTotalItems = response.data.data.total;
                     $scope.comics = response.data.data.results;
                     $scope.loading = false;
-                    //console.log(JSON.stringify($scope.comics,null,2));
                 },
                 function (response) {
-                    // error
                     return response; 
-                    // console.log(
-                    //     "$http.get error: " +
-                    //         response.statusText +
-                    //         " (" +
-                    //         response.status +
-                    //         ")"
-                    // );
                 }
             );
     }

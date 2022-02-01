@@ -3,19 +3,15 @@
         <div class="col-sm-12">
             <label for="query">Pesquise pelo nome do personagem:</label><br />
             <span>
-                <input id="query" type="text" ng-model="$ctrl.search" 
-                placeholder="digite aqui o nome"
+                <input id="query" type="text" ng-model="$ctrl.search" placeholder="digite aqui o nome"
                     class="form-control" uib-typeahead="heroe.name for heroe in $ctrl.loadCharacters($viewValue)"
                     typeahead-min-length="3" typeahead-wait-ms="300" typeahead-editable="true" />
             </span>
         </div>
     </div>
-
     <br />
     <hr />
-
     <div class="row">
-
         <div class="col-md-6">
             <ul ng-if="heroes.data.results.length">
                 <li class="todo" ng-repeat="heroe in heroes.data.results" ng-click="$ctrl.loadCharacter(heroe.id);">
@@ -25,8 +21,7 @@
             </ul>
             <p ng-if="!heroes.data.results.length" class="small-font">Sem resultados...</p>
         </div>
-
-        <div class="col-md-6">
+        <div class="col-md-6" ng-if="charSelected.data.results.length">
             <div ng-show="charSelected.data.results.length" class="">
                 <h3 ng-show="charSelected.data.results[0].name">{{charSelected.data.results[0].name}}</h3>
                 <p>
@@ -36,8 +31,7 @@
                 </p>
             </div>
         </div>
-
-        <div class="col-md-6">
+        <div class="col-md-6" ng-if="charSelected.data.results.length">
             <div ng-show="charSelected.data.results[0].description">
                 <p>
                     {{charSelected.data.results[0].description}}
@@ -49,25 +43,28 @@
                 </p>
             </div>
         </div>
-
     </div>
-
-    <div class="row">
+    <div class="row" ng-if="charSelected.data.results.length">
         <div class="col-md-12" ng-show="charSelected.data.results[0].urls">
             <p>
             <h4>Links:</h4>
             <ul style="list-style:none">
-                <li ng-repeat='url in charSelected.data.results[0].urls'><a href="{{url.url.replace('http', 'https')}}" target="_blank">
+                <li ng-repeat='url in charSelected.data.results[0].urls'><a href="{{url.url.replace('http', 'https')}}"
+                        target="_blank">
                         <span class="glyphicon glyphicon-new-window"></span> {{url.type }}</a>
                 </li>
             </ul>
             </p>
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-12">
-            <div ng-show="comics && comics.length > 0" style="clear:both; min-height:200px">
+            <div ng-show="comics && comics.length <= 0" ng-if="charSelected.data.results.length"
+                style="clear:both; min-height:200px">
+                <p>Quadrinhos (0)</p>
+            </div>
+            <div ng-show="comics && comics.length > 0" ng-if="charSelected.data.results.length"
+                style="clear:both; min-height:200px">
                 <p>Quadrinhos ({{comicsTotalItems}}):</p>
                 <div class="row">
                     <div class="col-sm-2" ng-repeat="comic in comics">
@@ -80,12 +77,10 @@
                         </figure>
                     </div>
                 </div>
-
                 <div>
                     <p>{{attributionHTML}}</p>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
