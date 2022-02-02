@@ -5,7 +5,7 @@ Aplicação com testes avançados para Angular JS 1.X usando ES6 modules consumi
 Ótima estrutura para projetos corporativos com foco pesado em testes unitários e integração.
 
 ## Demo
-* `https://marvel.controlemix.com.br`
+* https://marvel.controlemix.com.br
 
 
 ## Começando
