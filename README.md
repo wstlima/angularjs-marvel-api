@@ -12,12 +12,21 @@ Aplicação com testes avançados para Angular JS 1.X usando ES6 modules consumi
 
 1. Clone o repositório `git clone https://github.com/wstlima/angularjs-marvel-api`
 2. Entre no diretório do projeto `cd angularjs-marvel-api`
-3. Instale as dependências `npm i` ou `npm install` ou `yarn`
+3. Instale as dependências: 
+
+Com NPM
+`npm i` ou `npm install` 
+
+Com Yarn
+`yarn`
 
 ## Scripts
 
-Usando npm para rodar os scripts `npm run [script]`, por exemplo: `npm run test`.
-Usando yarn para rodar os scripts `yarn [script]`, por exemplo: `yarn test`.
+Usando npm para rodar os scripts `npm run [script]`
+Exemplo: `npm run test`.
+
+Usando yarn para rodar os scripts `yarn [script]`
+Exemplo: `yarn test`.
 
 * `start` - inicie o servidor de desenvolvimento, experimente-o abrindo `http://localhost:8081`
 
@@ -41,7 +50,8 @@ Usando yarn para rodar os scripts `yarn [script]`, por exemplo: `yarn test`.
 * `*.integration.test.js` - mocha testes de integração (manual)
 * `*.spec.js` - karma testes de integração 
 
-## Débitos Técnicos
+## Mudanças
 
-1. Paginação para os personagens
-2. Paginação para os quadrinhos
+1.2.0 Implementção da da paginação básica para os quadrinhos
+1.1.0 Implementção da Lightbox para abrir um quadrinho
+1.0.0 Release inicial

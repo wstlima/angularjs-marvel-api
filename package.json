@@ -1,6 +1,6 @@
 {
   "name": "angularjs-marvel-api",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Aplicação com testes avançados para Angular JS 1.X usando ES6 modules consumindo a API da Marvel",
   "main": "src/app.js",
   "scripts": {
