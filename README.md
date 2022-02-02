@@ -52,6 +52,6 @@ Exemplo: `yarn test`.
 
 ## Mudanças
 
-1.2.0 Implementção da da paginação básica para os quadrinhos
-1.1.0 Implementção da Lightbox para abrir um quadrinho
-1.0.0 Release inicial
+* 1.2.0 Implementção da da paginação básica para os quadrinhos
+* 1.1.0 Implementção da Lightbox para abrir um quadrinho
+* 1.0.0 Release inicial
