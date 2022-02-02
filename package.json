@@ -21,6 +21,7 @@
   "dependencies": {
     "angular": "1.5",
     "angular-animate": "1.5",
+    
     "angular-resource": "1.5",
     "angular-ui-bootstrap": "^2.5.6",
     "angular-ui-router": "0.2.15",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "angular-mocks": "1.5",
+    "angular-bootstrap-lightbox": "^0.12.0",
     "awesome-typescript-loader": "0.11.3",
     "babel-core": "^6.26.3",
     "babel-loader": "6.2.1",

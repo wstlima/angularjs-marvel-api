@@ -17,7 +17,7 @@ export default angular
         controller: CharacterComponent,
         template
     })
-    .controller('characterController', ['$http','$scope', CharacterComponent])
+    .controller('characterController', ['$http','$scope', 'Lightbox', CharacterComponent])
     .service("CharacterService", CharacterService, [ngResource])
     .constant("appEnv", DEFAULT_ENV)
     .constant("initialCharacters", DEFAULT_CHARACTERS).name;

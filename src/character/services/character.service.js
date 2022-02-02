@@ -86,7 +86,7 @@ export default class CharacterService {
             );
     }
 
-    getComics($scope, $http, characterId) {
+    getComics($scope, $http, characterId, comicsCurrentPage, pageSize) {
         $scope.loading = true;
         var ts = new Date().getTime();
         var stringToHash = ts + this.privatekey + this.publickey;
@@ -104,9 +104,9 @@ export default class CharacterService {
                         hash: hash,
                         format: "comic",
                         orderBy: "onsaleDate",
-                        limit: $scope.pageSize,
+                        limit: pageSize,
                         offset:
-                            ($scope.comicsCurrentPage - 1) * $scope.pageSize
+                            (comicsCurrentPage -1 ) * pageSize
                     }
                 }
             )
